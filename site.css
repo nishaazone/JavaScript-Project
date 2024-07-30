@@ -1,0 +1,134 @@
+a.one:hover {
+    color: rgb(255, 105, 105);
+    text-decoration: none;
+  }
+  a{
+    text-decoration: none;
+  }
+  h1 {
+    text-align: center;
+    text-shadow: 0 0 1.5rem rgb(217, 181, 181);
+    color: #d6c4c4;
+    background: rgb(19, 24, 122);
+    background: radial-gradient(
+      circle,
+      rgba(19, 24, 122, 1) 0%,
+      rgba(13, 13, 51, 1) 47%
+    );
+    padding: 10px;
+    position: fixed;
+    width: 100%;
+    font-family: "poppins", sans-serif;
+    z-index: 100;
+  }
+
+  #myTable {
+    margin-left: auto;
+    margin-right: auto;
+    font-family: Arial, Helvetica, sans-serif;
+    border: 2px solid #a45201;
+    border-collapse: collapse;
+    width: 70%;
+  }
+
+  #myTable td,
+  #myTable th {
+    padding: 8px;
+  }
+
+  #myTable tr:nth-child(even) {
+    background-color: #f3e5d9;
+  }
+  #myTable tr:nth-child(odd) {
+    background-color: #f6f5f4;
+  }
+  #myTable tr:hover {
+    background-color: #ddd;
+  }
+
+  #myTable th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: center;
+    background-color: #954b02;
+    color: white;
+  }
+
+  td {
+    text-align: center;
+  }
+  #neo {
+    background-attachment: fixed;
+    background-origin: padding-box;
+    background-position: center;
+  }
+
+  button.btn.btn-primary.btn-block {
+    margin-left: 540px;
+    margin-bottom: 20px;
+    border-radius: 20px;
+    margin-top: 100px;
+    border-color: #ffffff;
+  }
+  .fa-solid {
+    padding-left: 3px;
+  }
+
+  h1 {
+    font-size: 35px;
+    text-align: center;
+    text-shadow: 0 0 1.5rem rgb(217, 181, 181);
+    color: #d6c4c4;
+    background: rgb(19, 24, 122);
+    background: radial-gradient(
+      circle,
+      rgba(19, 24, 122, 1) 0%,
+      rgba(13, 13, 51, 1) 47%
+    );
+    padding: 10px;
+    position: fixed;
+    width: 100%;
+    font-family: "poppins", sans-serif;
+    z-index: 100;
+  }
+
+  .card{
+    margin-top: 30px;
+  }
+
+  .card-title{
+      background: rgb(39,110,177);
+      background: radial-gradient(circle, rgb(50, 122, 189) 0%, rgba(4,49,65,1) 81%);
+      padding: 20px;
+      border-radius: 15px;
+      color: #d6c4c4;
+  }
+
+  .card-body{
+      color: rgb(248, 245, 245);
+      background: radial-gradient(circle, rgba(0,0,0,1) 0%, rgb(21, 34, 39) 98%);
+      box-shadow: 0 3px 10px rgba(192, 188, 188, 0.2);
+      border-radius: 10px;
+  }
+  #pg1{
+    background: rgb(144,45,45);
+    background: radial-gradient(circle, rgba(144,45,45,1) 0%, rgba(86,38,145,1) 98%);
+      background-attachment: fixed;
+      background-position: center center;
+      background-size: cover;
+      background-repeat: no-repeat;
+  }
+  #temperatureDropdown{
+      margin-top: 50px;
+      position: fixed;
+      margin-left: 80px;
+  }
+
+  .card{
+      background-color: rgb(247, 250, 252);  
+  }
+  .btn-light{
+     font-weight: bold;
+     background-color: #f3e5d9;
+     margin-top: 5px;
+  }

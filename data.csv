@@ -1,0 +1,52 @@
+site_id,name,serial,temperature,signal,battery,fill_level_cm,fill_level_percent,rag
+21824,Warehouse,G-2001,24,21,3.48,1,0,unknown
+21824,Warehouse,G-2002,35,7,3.02,34,0,unknown
+21824,Warehouse,G-2003,32,9,3.18,7,0,unknown
+21824,Warehouse,G-2004,37,12,3.04,9,0,unknown
+21824,Warehouse,G-2005,27,16,2.84,2,0,unknown
+21824,Warehouse,G-2006,30,13,3.04,35,0,unknown
+21824,Warehouse,G-2007,26,16,3.52,8,0,empty
+21824,Warehouse,G-2008,27,21,2.96,10,0,unknown
+21824,Warehouse,G-2009,9,22,3.14,3,0,unknown
+21824,Warehouse,G-2010,27,9,3.24,36,0,unknown
+21824,Warehouse,G-2011,31,24,3.2,9,0,unknown
+21824,Warehouse,G-2012,36,31,3.04,11,0,empty
+21824,Warehouse,G-2013,31,6,3.3,4,0,unknown
+21824,Warehouse,G-2014,31,19,3.24,37,0,unknown
+21824,Warehouse,G-2015,42,10,3.02,10,0,unknown
+21824,Warehouse,G-2016,34,22,3.3,12,0,unknown
+21824,Warehouse,G-2017,31,16,2.98,5,0,empty
+21824,Warehouse,G-2018,37,10,3.34,38,0,empty
+21824,Warehouse,G-2019,35,17,3,11,0,unknown
+21824,Warehouse,G-2020,31,11,3.54,0,0,unknown
+21824,Warehouse,G-2021,29,19,2.76,NULL,100,full
+21961,Forzano Park (G)(T),G-2022,39,19,3.44,73,51,in-use
+21824,Warehouse,G-2023,24,12,2.84,0,0,unknown
+21824,Warehouse,G-2024,27,19,3.22,0,0,unknown
+25916,Hollywood Park Elementary,G-2025,37,16,3.52,42,29,empty
+20924,Warehouse,G-2026,27,11,3.32,0,0,unknown
+25919,7-ElevenWoolbright,G-2027,22,8,3.5,0,0,unknown
+21824,Warehouse,G-2028,40,11,3.38,0,0,unknown
+21824,Warehouse,G-2029,27,12,3.06,0,0,unknown
+21824,Warehouse,G-2030,26,14,2.7,-61,0,empty
+21824,Warehouse,G-2031,35,13,2.96,0,0,unknown
+26193,Peters Elementary,G-2032,23,13,3.48,-10,0,empty
+21824,Warehouse,G-2033,29,11,3.06,0,0,unknown
+21824,Warehouse,G-2034,32,12,3.56,55,38,empty
+20857,Shell,G-2035,33,19,3.28,16,0,empty
+21824,Warehouse,G-2036,36,13,3,0,0,unknown
+21824,Warehouse,G-2037,26,18,3.28,0,0,unknown
+25797,Apollo Middle School (G),G-2038,32,26,3.5,52,36,empty
+21824,Warehouse,G-2039,35,13,2.88,0,0,unknown
+20878,Exxon Gas Station,G-2040,26,8,3.26,56,0,empty
+21824,Warehouse,G-2041,34,14,3.3,NULL,0,empty
+21824,Warehouse,G-2042,28,24,3.4,0,0,unknown
+21824,Warehouse,G-2043,27,13,2.94,0,0,unknown
+21824,Warehouse,G-2044,35,10,3.36,0,0,unknown
+26116,Silver Trail Middle School (2)(G),G-2045,40,14,3.56,10,8,empty
+26116,Silver Trail Middle School (2)(G),G-2046,40,14,3.56,10,8,empty
+20878,Exxon Gas Station,G-2047,26,8,3.26,56,0,empty
+20878,Exxon Gas Station,G-2048,26,8,3.26,56,0,empty
+20857,Shell,G-2049,33,19,3.28,16,0,empty
+20857,Shell,G-2050,33,19,3.28,16,0,empty
+20857,Shell,G-2051,33,19,3.28,16,0,empty

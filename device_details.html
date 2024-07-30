@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="site.css">
+    <title>Site Details</title>
+</head>
+    <body background="https://e1.pxfuel.com/desktop-wallpaper/855/31/desktop-wallpaper-from-the-verge-orange-and-blue-geometric.jpg" id="pg1">
+
+<h1>Site Name: <span id="devicesNum"></span></h1>
+    
+        <br><br><br>
+        <!-- Dropdown for temperature unit selection -->
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+            <button class="btn btn-secondary dropdown-toggle" type="button" id="temperatureDropdown" data-bs-toggle="dropdown" aria-expanded="false">
+                Temperature Unit 
+            </button>
+            <ul class="dropdown-menu" aria-labelledby="temperatureDropdown">
+                <li><a class="dropdown-item" href="#" id="celsiusOption">Celsius</a></li>
+                <li><a class="dropdown-item" href="#" id="fahrenheitOption">Fahrenheit</a></li>
+            </ul>
+        </div>
+    </div>
+    </div>
+    <br>
+    <div id="site-details">
+        <!-- Data for the selected site will be displayed here -->
+    </div>
+
+    <script>
+         const urlParams = new URLSearchParams(window.location.search);
+         const nameParam = urlParams.get('devicesNum'); 
+         if (nameParam) {
+         const nameElement = document.getElementById('devicesNum').textContent = nameParam;
+        //  nameElement.textContent = nameParam;
+         } 
+        // Function to parse URL parameters
+        function getParameterByName(name, url) {
+            if (!url) url = window.location.href;
+            name = name.replace(/[\[\]]/g, "\\$&");
+            var regex = new RegExp("[?&]" + name + "(=([^&#]*)|&|#|$)"),
+                results = regex.exec(url);
+            if (!results) return null;
+            if (!results[2]) return '';
+            return decodeURIComponent(results[2].replace(/\+/g, " "));
+        }
+
+        // Get the site name from the URL parameter
+        const devicesNum = getParameterByName('devicesNum');
+        if (devicesNum) {
+            // Fetch the CSV file (updated path to "data.csv")
+            fetch('data.csv')
+                .then(response => response.text())
+                .then(csvData => {
+                    const rows = csvData.trim().split('\n');
+                    const siteDetails = [];
+
+                    // Find the rows with matching site name
+                    for (const row of rows) {
+                        const [, name, deviceName, temperature, signal, battery, fill_Level, fill_Level1, rag] = row.split(',');
+                        if (name === devicesNum) {
+                            siteDetails.push(`
+                                <div class="col d-flex justify-content-center">
+                                    <div class="card text-center" style="width: 18rem;">
+                                        <div class="card-body">
+                                            <h5 class="card-title"><strong>Device Name:</strong> ${deviceName}</h5>
+<p><strong>Temperature:</strong> <span class="card-temperature" data-celsius="${temperature}">${temperature} °C</span><p>                                           
+                                             <p><strong>Signal (dBm):</strong> ${signal} </p>
+                                            <p><strong>Battery:</strong> ${battery}</p>
+                                            <p><strong>Fill Level (cm):</strong> ${fill_Level} </p>
+                                            <p><strong>Fill Level (%):</strong> ${fill_Level1} </p>
+                                            <p><strong>Rag:</strong> ${rag}</p>
+                                            <button type="button" class="btn btn-light" onclick="">Calculate</button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <hr>
+                            `);
+                        }
+                    }
+
+         // Display the site details
+        const siteDetailsDiv = document.getElementById('site-details');
+        siteDetailsDiv.innerHTML = siteDetails.join('');
+
+
+        // Function to convert Celsius to Fahrenheit
+        function celsiusToFahrenheit(celsius) {
+            return (celsius * 9/5) + 32;
+        }
+
+        // Function to update temperature unit
+        function updateTemperatureUnit(unit) {
+            const temperatureElements = document.querySelectorAll('.card-temperature');
+
+            temperatureElements.forEach(element => {
+                const celsiusValue = parseFloat(element.getAttribute('data-celsius'));
+
+                if (unit === 'Celsius') {
+                    element.textContent = celsiusValue + ' °C';
+                } else {
+                    const fahrenheitValue = celsiusToFahrenheit(celsiusValue);
+                    element.textContent = fahrenheitValue.toFixed(2) + ' °F';
+                  }
+                });
+               }
+
+                 const celsiusOption = document.getElementById('celsiusOption');
+                 const fahrenheitOption = document.getElementById('fahrenheitOption');
+
+                 celsiusOption.addEventListener('click', () => {
+                 updateTemperatureUnit('Celsius');
+                    });
+
+                 fahrenheitOption.addEventListener('click', () => {
+                 updateTemperatureUnit('Fahrenheit');
+                });
+              })
+                .catch(error => {
+                    console.error('Error fetching CSV file:', error);
+                });
+          } else {
+            console.error('Site name not provided in URL.');
+        }
+    </script>
+  </body>
+</html>
